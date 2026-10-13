@@ -3,6 +3,13 @@ title: About
 description: About Yadurshan Rajakumar, full stack developer in Colombo, Sri Lanka.
 aside: false
 outline: false
+teamPhotos:
+  - src: CoinCeylonTeam1.jpeg
+    alt: Yadurshan with the CoinCeylon team on a rooftop at night
+    caption: With the CoinCeylon team
+  - src: CoinCeylonTeam2.jpeg
+    alt: Yadurshan with the CoinCeylon team at an evening event
+    caption: With the CoinCeylon team at an evening event
 ---
 
 # About
@@ -14,6 +21,10 @@ I'm Yadurshan Rajakumar, a full stack developer based in Colombo, Sri Lanka.
 Since September 2024 I've worked as an Associate Blockchain Developer at Coinceylon. Most days I'm writing TypeScript and Node.js with MeshSDK and Plutus for onchain features. I also set up and look after the Ubuntu server we run on at Hetzner, including a Cardano node I use to test indexers like Dolos and cardano-db-sync. I also run live product demos for partners and clients, and act as the link between them and our engineers.
 
 I started this blog to write down what I learn while building, so the next developer has an easier time than I did.
+
+## The CoinCeylon team
+
+<PhotoGrid :photos="$frontmatter.teamPhotos" />
 
 ## Projects
 

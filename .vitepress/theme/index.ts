@@ -3,6 +3,7 @@ import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
 import PostList from './PostList.vue'
 import PostMeta from './PostMeta.vue'
+import PhotoGrid from './PhotoGrid.vue'
 import './custom.css'
 
 export default {
@@ -15,5 +16,6 @@ export default {
   },
   enhanceApp({ app }) {
     app.component('PostList', PostList)
+    app.component('PhotoGrid', PhotoGrid)
   }
 } satisfies Theme
