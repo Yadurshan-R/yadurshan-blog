@@ -4,7 +4,13 @@ aside: false
 outline: false
 ---
 
+<div class="intro">
+
+![Yadurshan Rajakumar](/images/yadurshan-avatar.jpg){.avatar}
+
 # Yadurshan Rajakumar
+
+</div>
 
 I'm a full stack developer in Colombo, Sri Lanka. I work at Coinceylon, where I build Cardano applications with TypeScript, Go and Aiken and demo them to partners and clients. Once a month I present the CoinCeylon x Intersect community town hall in English, Tamil and Sinhala.
 

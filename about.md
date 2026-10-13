@@ -7,6 +7,8 @@ outline: false
 
 # About
 
+![Yadurshan Rajakumar in Colombo, with the Lotus Tower behind him](/images/yadurshan.jpeg){.portrait}
+
 I'm Yadurshan Rajakumar, a full stack developer based in Colombo, Sri Lanka.
 
 Since September 2024 I've worked as an Associate Blockchain Developer at Coinceylon. Most days I'm writing TypeScript and Node.js with MeshSDK and Plutus for onchain features. I also set up and look after the Ubuntu server we run on at Hetzner, including a Cardano node I use to test indexers like Dolos and cardano-db-sync. I also run live product demos for partners and clients, and act as the link between them and our engineers.

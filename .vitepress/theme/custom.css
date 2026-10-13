@@ -26,3 +26,56 @@
 .vp-doc h1 {
   letter-spacing: -0.01em;
 }
+
+/* Home page: round photo next to the name. */
+.vp-doc .intro {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+.vp-doc .intro p {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.vp-doc .intro h1 {
+  margin: 0;
+}
+
+.vp-doc img.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* About page: full photo beside the opening paragraphs. */
+.vp-doc img.portrait {
+  float: right;
+  width: 220px;
+  margin: 4px 0 16px 28px;
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc h2 {
+  clear: both;
+}
+
+@media (max-width: 640px) {
+  .vp-doc img.avatar {
+    width: 72px;
+    height: 72px;
+  }
+
+  .vp-doc img.portrait {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    margin: 0 0 20px;
+  }
+}
