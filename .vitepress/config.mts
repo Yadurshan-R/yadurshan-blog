@@ -11,10 +11,23 @@ export default defineConfig({
   // Drafts can be previewed with `npm run dev`, but are never published by `npm run build`.
   srcExclude: process.argv.includes('build') ? ['drafts/**', 'README.md'] : ['README.md'],
 
+  // One light theme, like a printed page. No dark mode switch.
+  appearance: false,
+
   head: [
     ['meta', { name: 'author', content: 'Yadurshan Rajakumar' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:site_name', content: 'Yadurshan Rajakumar' }]
+    ['meta', { property: 'og:site_name', content: 'Yadurshan Rajakumar' }],
+    // Playfair Display for the name and headings, PT Sans for menus and labels.
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=PT+Sans:wght@400;700&display=swap'
+      }
+    ]
   ],
 
   themeConfig: {
@@ -30,8 +43,6 @@ export default defineConfig({
     ],
 
     outline: { level: [2, 3], label: 'On this page' },
-
-    search: { provider: 'local' },
 
     footer: {
       copyright: `© ${new Date().getFullYear()} Yadurshan Rajakumar`
