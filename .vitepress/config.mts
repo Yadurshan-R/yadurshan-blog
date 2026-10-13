@@ -5,6 +5,7 @@ export default defineConfig({
   title: 'Yadurshan Rajakumar',
   description:
     'Writing on full stack development, Cardano and developer platforms by Yadurshan Rajakumar.',
+  base: '/yadurshan-blog/',
   cleanUrls: true,
 
   // Drafts can be previewed with `npm run dev`, but are never published by `npm run build`.
