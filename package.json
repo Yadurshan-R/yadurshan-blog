@@ -1,0 +1,17 @@
+{
+  "name": "yadurshan-blog",
+  "version": "1.0.0",
+  "description": "Yadurshan Rajakumar's developer blog: full-stack, Cardano and developer relations",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "author": "Yadurshan Rajakumar",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
