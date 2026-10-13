@@ -17,17 +17,7 @@ export default defineConfig({
   head: [
     ['meta', { name: 'author', content: 'Yadurshan Rajakumar' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:site_name', content: 'Yadurshan Rajakumar' }],
-    // Playfair Display for the name and headings, PT Sans for menus and labels.
-    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    [
-      'link',
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=PT+Sans:wght@400;700&display=swap'
-      }
-    ]
+    ['meta', { property: 'og:site_name', content: 'Yadurshan Rajakumar' }]
   ],
 
   themeConfig: {

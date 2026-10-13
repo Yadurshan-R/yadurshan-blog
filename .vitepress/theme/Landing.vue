@@ -7,12 +7,15 @@ interface Slide {
   src: string
   alt: string
   position?: string
+  // "whole" shows the full photo over a blurred copy of itself, for wide
+  // group photos that would otherwise be cut off. The default fills the space.
+  fit?: 'fill' | 'whole'
 }
 
 const { frontmatter } = useData()
 
 const slides = computed<Slide[]>(() => frontmatter.value.slides ?? [])
-const seconds = computed<number>(() => frontmatter.value.slideSeconds ?? 5)
+const seconds = computed<number>(() => frontmatter.value.slideSeconds ?? 3)
 const links = [
   { text: 'Writing', href: withBase('/blog/') },
   { text: 'Talks', href: withBase('/talks') },
@@ -57,15 +60,26 @@ onBeforeUnmount(() => {
 <template>
   <main class="landing">
     <section class="photo" aria-label="Photos of Yadurshan at work and events">
-      <img
+      <div
         v-for="(slide, i) in slides"
         :key="slide.src"
-        :src="withBase(`/images/${slide.src}`)"
-        :alt="slide.alt"
-        :class="{ active: i === current }"
-        :style="slide.position ? { objectPosition: slide.position } : undefined"
-        :loading="i === 0 ? 'eager' : 'lazy'"
-      />
+        :class="['slide', slide.fit === 'whole' ? 'whole' : 'fill', { active: i === current }]"
+      >
+        <img
+          v-if="slide.fit === 'whole'"
+          class="backdrop"
+          :src="withBase(`/images/hero/${slide.src}`)"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          class="main"
+          :src="withBase(`/images/hero/${slide.src}`)"
+          :alt="slide.alt"
+          :style="slide.position ? { objectPosition: slide.position } : undefined"
+          :loading="i === 0 ? 'eager' : 'lazy'"
+        />
+      </div>
     </section>
 
     <section class="text">
@@ -93,7 +107,7 @@ onBeforeUnmount(() => {
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
   background: #fff;
-  color: #2b2b2b;
+  color: #3a3a3a;
 }
 
 /* Left half: photos stacked on top of each other, fading in turn. */
@@ -103,18 +117,37 @@ onBeforeUnmount(() => {
   background: #e9e9e9;
 }
 
-.photo img {
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease;
 }
 
-.photo img.active {
-  opacity: 1;
+.fill .main {
+  object-fit: cover;
+}
+
+.whole .main {
+  object-fit: contain;
+}
+
+/* Soft, darkened copy of the same photo behind a "whole" photo. */
+.whole .backdrop {
+  object-fit: cover;
+  filter: blur(28px) brightness(0.75);
+  transform: scale(1.15);
 }
 
 /* Right half: name, role and links. */
@@ -128,21 +161,21 @@ onBeforeUnmount(() => {
 h1 {
   margin: 0;
   font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 700;
-  font-size: clamp(40px, 5vw, 72px);
-  line-height: 1.05;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  font-size: clamp(36px, 4.4vw, 64px);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #2b2b2b;
+  color: #3a3a3a;
 }
 
 .role {
   margin: 20px 0 0;
   font-family: 'PT Sans', system-ui, sans-serif;
-  font-size: clamp(15px, 1.5vw, 20px);
-  letter-spacing: 0.3em;
+  font-size: clamp(14px, 1.3vw, 18px);
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #2b2b2b;
+  color: #6f6f6f;
 }
 
 nav {
@@ -155,17 +188,18 @@ nav {
 }
 
 nav > a {
-  font-size: 15px;
-  letter-spacing: 0.3em;
+  font-size: 14px;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #2b2b2b;
+  color: #555;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s;
 }
 
 nav > a:hover {
-  border-color: #2b2b2b;
+  color: #3a3a3a;
+  border-color: #3a3a3a;
 }
 
 .icons {
@@ -175,7 +209,7 @@ nav > a:hover {
 
 .icons a {
   display: flex;
-  color: #2b2b2b;
+  color: #555;
   opacity: 0.85;
 }
 
@@ -207,7 +241,7 @@ nav > a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .photo img {
+  .slide {
     transition: none;
   }
 }

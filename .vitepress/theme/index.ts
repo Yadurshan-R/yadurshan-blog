@@ -4,6 +4,11 @@ import type { Theme } from 'vitepress'
 import PostList from './PostList.vue'
 import PostMeta from './PostMeta.vue'
 import Landing from './Landing.vue'
+// Fonts are bundled with the site, so nothing loads from Google.
+import '@fontsource/playfair-display/500.css'
+import '@fontsource/playfair-display/600.css'
+import '@fontsource/pt-sans/400.css'
+import '@fontsource/pt-sans/700.css'
 import './custom.css'
 
 export default {

@@ -3,23 +3,23 @@
   headings, and a spaced uppercase sans for menus and labels.
 */
 :root {
-  --ink: #2b2b2b;
+  --ink: #3a3a3a;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-label: 'PT Sans', system-ui, sans-serif;
 
   --vp-c-brand-1: var(--ink);
   --vp-c-brand-2: #555;
   --vp-c-brand-3: #555;
-  --vp-c-brand-soft: rgba(43, 43, 43, 0.08);
+  --vp-c-brand-soft: rgba(58, 58, 58, 0.08);
   --vp-c-text-1: var(--ink);
 }
 
 /* Top bar on inner pages: name in serif capitals, menu in spaced capitals. */
 .VPNavBarTitle .title {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 500;
   font-size: 18px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -45,7 +45,7 @@
 .vp-doc h2,
 .vp-doc h3 {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.01em;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .vp-doc a:hover {
-  color: #000;
+  color: #111;
 }
 
 /* About page: one photo beside the opening paragraphs. */
