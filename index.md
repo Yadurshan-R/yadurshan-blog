@@ -11,6 +11,9 @@ role: Developer & Community Speaker
 # "position" chooses which part of a filled photo to keep when it is cropped.
 slideSeconds: 3
 slides:
+  - src: yadurshan.jpg
+    alt: Yadurshan Rajakumar in Colombo, with the Lotus Tower behind him
+    position: center 25%
   - src: Expo_explaining.jpg
     fit: whole
     alt: Yadurshan talking with visitors at the CoinCeylon x Intersect booth
