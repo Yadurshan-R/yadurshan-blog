@@ -1,10 +1,10 @@
 ---
 title: Yadurshan Rajakumar
-titleTemplate: Full Stack Developer
+titleTemplate: Developer & Community Speaker
 layout: false
 
 name: Yadurshan Rajakumar
-role: Full Stack Developer
+role: Developer & Community Speaker
 
 # Photos on the left, in order. Each one stays for slideSeconds, then fades to the next.
 # "position" chooses which part of the photo to keep when it is cropped.
