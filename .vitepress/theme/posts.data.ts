@@ -6,6 +6,7 @@ export interface Post {
   date: string
   description: string
   tags: string[]
+  type: string // shown as the small label on the card, e.g. Blog or Tutorial
 }
 
 declare const data: Post[]
@@ -21,7 +22,8 @@ export default createContentLoader('blog/posts/*.md', {
         url,
         date: frontmatter.date ? new Date(frontmatter.date).toISOString() : '',
         description: frontmatter.description ?? '',
-        tags: frontmatter.tags ?? []
+        tags: frontmatter.tags ?? [],
+        type: frontmatter.type ?? 'Blog'
       }))
       .sort((a, b) => +new Date(b.date) - +new Date(a.date))
   }
